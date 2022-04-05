@@ -58,7 +58,6 @@ for episode in range(episodes):
             if done and steps < 500:
                 next_value = torch.tensor([0.0], device=device)
             delta = reward + gamma * next_value - value
-            value_norm = torch.norm
 
         optimizer.zero_grad()
         value_loss = -delta * value
